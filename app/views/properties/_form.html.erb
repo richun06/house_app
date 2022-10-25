@@ -36,6 +36,27 @@
     <%= form.text_area :remakers %>
   </div>
 
+  <%= form.fields_for :stations do |stations| %>
+
+    <h2>路線</h2>
+
+    <div class="field">
+      <%= stations.label :路線名 %>
+      <%= stations.text_field :route_name %>
+    </div>
+
+    <div class="field">
+      <%= stations.label :駅名 %>
+      <%= stations.text_field :station_name %>
+    </div>
+
+    <div class="field">
+      <%= stations.label :徒歩分数 %>
+      <%= stations.time_select :walking_minutes %>
+    </div>
+
+  <% end %>
+
   <div class="actions">
     <%= form.submit "登録する" %>
   </div>
